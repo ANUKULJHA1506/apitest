@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:io';
+
 
 import 'package:apitest/Models/PostModel.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
 
-        title: Text('api test'),
+        title: const Text('api test'),
       ),
       body: Center(
 
@@ -89,9 +89,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('User ID --\n'+postList[index].userId.toString()),
-                            Text('Body --\n'+postList[index].body.toString()),
+                          children: [const Text('User Id -- ',style:  TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                            Text(postList[index].userId.toString()),
+                            const Text('Body -- ',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                            Text(postList[index].body.toString()),
                           ],
                         ),
                       );
